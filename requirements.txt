@@ -11,3 +11,4 @@ IPython
 streamlit
 traceback
 dotenv
+chromadb
