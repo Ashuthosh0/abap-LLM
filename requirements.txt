@@ -5,10 +5,8 @@ pydantic
 langchain_core
 langchain_groq
 langgraph
-io
-PIL
+pillow
 IPython
 streamlit
-traceback
 dotenv
 chromadb
