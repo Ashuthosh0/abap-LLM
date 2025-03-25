@@ -13,7 +13,7 @@ This project leverages Large Language Models (LLMs) with Retrieval-Augmented Gen
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone <https://github.com/Ashuthosh0/abap-LLM.git>
+git clone https://github.com/Ashuthosh0/abap-LLM.git
 cd abapLLM
 ```
 
