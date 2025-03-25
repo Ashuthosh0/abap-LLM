@@ -31,14 +31,12 @@ pip install -r requirements.txt
 ### 4️⃣ Set Up API Keys
 This project requires API keys for:
 - **LLM Inference (Groq)**
-- **Langchain API (ChromaDB)**
 - **Tavily API for web search**
 
 #### Add API Keys to `.env` File
 Create a `.env` file in the project root and add:
 ```sh
-LLM_API_KEY=your_llm_api_key_here
-VECTOR_DB_API_KEY=your_vector_db_api_key_here
+CHAT_GROQ=your_groq_api_key_here
 TAVILY_API_KEY=your_tavily_api_key_here
 ```
 
