@@ -1,0 +1,13 @@
+langchain_huggingface
+langchain_community
+langchain
+pydantic
+langchain_core
+langchain_groq
+langgraph
+io
+PIL
+IPython
+streamlit
+traceback
+dotenv
