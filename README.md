@@ -36,7 +36,7 @@ This project requires API keys for:
 #### Add API Keys to `.env` File
 Create a `.env` file in the project root and add:
 ```sh
-CHAT_GROQ=your_groq_api_key_here
+CHAT_GROQ_API_KEY=your_groq_api_key_here
 TAVILY_API_KEY=your_tavily_api_key_here
 ```
 
