@@ -10,3 +10,4 @@ IPython
 streamlit
 dotenv
 chromadb
+onnxruntime
