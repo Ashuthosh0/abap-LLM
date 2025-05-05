@@ -99,7 +99,7 @@ def web_search_node(state: dict):
     results = tavily_search.invoke(query)
     
     # Debug: Print the raw results before processing
-    print(f"🔍 [DEBUG] Raw results from tavily_search: {type(results)} - {results}")
+    print(f" Raw results from tavily_search: {type(results)} - {results}")
 
     # Check and print each item in results
     for idx, doc in enumerate(results):
@@ -112,10 +112,10 @@ def web_search_node(state: dict):
             for doc in results
         ]
     except Exception as e:
-        print(f"❌ [ERROR] Exception while creating Document objects: {e}")
+        print(f"Exception while creating Document objects: {e}")
         return {"documents": []}  # Return empty list in case of error
 
-    print(f"✅ [DEBUG] Processed Documents: {documents}")
+    print(f" Processed Documents: {documents}")
     return {"documents": documents}
 
 
@@ -125,9 +125,9 @@ def question_router_node(state: dict):
     topics_list = ", ".join(ABAP_TOPICS)
     try:
         response = question_router.invoke({"query" : query , "topics_list" : topics_list})
-        print(f"🔍 [LOG] Router Response: {response}")
+        print(f"Router Response: {response}")
     except Exception as e:
-        print(f"❌ [ERROR] Router failed: {str(e)}")
+        print(f" Router failed: {str(e)}")
         return "llm_fallback"
 
     if "tool_calls" not in response.additional_kwargs:
@@ -138,14 +138,14 @@ def question_router_node(state: dict):
         raise "Router could not decide route!"
 
     route = response.additional_kwargs["tool_calls"][0]["function"]["name"]
-    print(f"🚀 [LOG] Routing to: {route}")
+    print(f" Routing to: {route}")
     if route == "VectorStore":
         print("---Routing to VectorStore---")
         return "VectorStore"
     elif route == "SearchEngine":
         print("---Routing to SearchEngine---")
         return "SearchEngine"
-    print("⚠️ Unknown route, defaulting to fallback.")
+    print(" Unknown route, defaulting to fallback.")
     return "llm_fallback"
 
 
